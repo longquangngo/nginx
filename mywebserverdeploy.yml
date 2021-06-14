@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ibloginspa
+  labels:
+    app: ibloginspa
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ibloginspa
+  template:
+    metadata:
+      labels:
+        app: ibloginspa
+    spec:
+      containers:
+      - name: ibloginspa
+        image: longquang/webserver
+        ports:
+        - containerPort: 30344
